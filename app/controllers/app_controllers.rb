@@ -12,6 +12,11 @@ private
     respond_with body, 'application/json; charset=utf-8', status
   end
 
+  def not_found
+    body = "not found"
+    respond_with body, 'text/plain', 404
+  end
+
   def parse_query(query)
     begin
       Hash[*query.split(/=|&/)]

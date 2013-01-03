@@ -3,7 +3,7 @@ class PostsControllers < AppControllers
   def call(env)
     path = env["PATH_INFO"]
     method = env["REQUEST_METHOD"]
-    case path
+    case path.to_s
     when '/' || '' then
       case method
       when "GET" then
@@ -78,8 +78,4 @@ private
     end
   end
 
-  def not_found
-    body = "not found"
-    respond_with body, 'text/plain', 404
-  end
 end
