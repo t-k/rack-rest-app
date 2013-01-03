@@ -1,7 +1,7 @@
 ENV['RACK_ENV'] = 'test'
 require 'rubygems'
 require 'bundler'
-
+Bundler.require
 require 'rspec'
 require 'rack/test'
 require 'spork'
